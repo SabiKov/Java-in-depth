@@ -1,4 +1,4 @@
-package co.sabi11.ddns.net.thrillio.entities;
+package net.ddns.sabi11.thrillio.entities;
 
 public class Movie extends Bookmark {
 
@@ -40,8 +40,5 @@ public class Movie extends Bookmark {
 	public void setImdbRating(double imdbRating) {
 		this.imdbRating = imdbRating;
 	}
-	
-	
-	
 	
 }
