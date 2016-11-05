@@ -2,9 +2,12 @@ package net.ddns.sabi11.thrillio.entities;
 
 import java.util.Arrays;
 
-import net.ddns.sabi11.thrillio.constants.BookGenre;
+import org.apache.commons.lang3.StringUtils;
 
-public class Book extends Bookmark {
+import net.ddns.sabi11.thrillio.constants.BookGenre;
+import net.ddns.sabi11.thrillio.partner.Shareable;
+
+public class Book extends Bookmark implements Shareable {
 
 	private int publicationYear;
 	private String publisher;
@@ -55,5 +58,21 @@ public class Book extends Bookmark {
 		}
 		
 		return true;
+	}
+	@Override
+	public String getItemData() {
+		
+		StringBuilder builder = new StringBuilder();
+		builder.append("<item>");
+			builder.append("<type>Book</type>");
+			builder.append("<title>").append(getTitle()).append("</title>");
+			builder.append("<authors>").append(StringUtils.join(author, ", ")).append("</authors>");
+			builder.append("<publisher>").append(getPublisher()).append("</publisher>");
+			builder.append("<publicationYear>").append(getPublicationYear()).append("</publicationYear>");
+			builder.append("<genre>").append(genre).append("</genre>");
+			builder.append("<amazonRating>").append(amazonRating).append("</amazonRating>");
+		builder.append("</item>");
+		
+		return builder.toString();
 	}
 }

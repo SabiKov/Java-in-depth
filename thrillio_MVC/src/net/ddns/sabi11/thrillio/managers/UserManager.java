@@ -38,7 +38,7 @@ public class UserManager {
 		user.setFirstName(firstName);
 		user.setLastName(lastName);
 		user.setGender(gender);
-		user.setUsertype(usertype);
+		user.setUserType(usertype);
 		
 		return user;
 	}

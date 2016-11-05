@@ -9,7 +9,7 @@ public class User {
 	private String firstName;
 	private String lastName;
 	private int gender;
-	private String usertype;
+	private String userType;
 	
 	
 	//Getter and Setter
@@ -60,17 +60,17 @@ public class User {
 	public void setGender(int gender) {
 		this.gender = gender;
 	}
-	public String getUsertype() {
-		return usertype;
+	public String getUserType() {
+		return userType;
 	}
-	public void setUsertype(String usertype) {
-		this.usertype = usertype;
+	public void setUserType(String usertype) {
+		this.userType = usertype;
 	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", email=" + email + ", password=" + password + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", gender=" + gender + ", usertype=" + usertype + "]";
+				+ ", lastName=" + lastName + ", gender=" + gender + ", usertype=" + userType + "]";
 	}
 	
 
