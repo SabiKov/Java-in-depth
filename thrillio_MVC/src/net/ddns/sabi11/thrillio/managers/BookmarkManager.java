@@ -1,13 +1,18 @@
 package net.ddns.sabi11.thrillio.managers;
 
+import net.ddns.sabi11.thrillio.dao.BookmarkDao;
 import net.ddns.sabi11.thrillio.entities.Book;
+import net.ddns.sabi11.thrillio.entities.Bookmark;
 import net.ddns.sabi11.thrillio.entities.Movie;
+import net.ddns.sabi11.thrillio.entities.User;
+import net.ddns.sabi11.thrillio.entities.UserBookmark;
 import net.ddns.sabi11.thrillio.entities.WebLink;
 
 public class BookmarkManager {
 
 	//Create a single instance of this class
 	private static BookmarkManager instance = new BookmarkManager();
+	private static BookmarkDao dao = new BookmarkDao();
 
 	// Singleton
 	private BookmarkManager() {
@@ -87,5 +92,17 @@ public class BookmarkManager {
 		
 	}
 	
-	
+	public Bookmark[][] getBookmarks() {
+		
+		return dao.getBookmarks();
+	}
+
+	public void saveUserBookmark(User user, Bookmark bookmark) {
+		
+		UserBookmark userBookmark = new UserBookmark();
+		userBookmark.setUser(user);
+		userBookmark.setBookmark(bookmark);
+		
+		dao.saveUserBookmark(userBookmark);
+	}
 }

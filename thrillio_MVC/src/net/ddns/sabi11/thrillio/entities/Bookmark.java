@@ -1,6 +1,6 @@
 package net.ddns.sabi11.thrillio.entities;
 
-public class Bookmark {
+public abstract class Bookmark {
 
 	//Attributes
 	private long id;
@@ -32,5 +32,5 @@ public class Bookmark {
 		this.profileUrl = profileUrl;
 	}
 	
-	
+	public abstract boolean isKidsFriendlyEligible();
 }

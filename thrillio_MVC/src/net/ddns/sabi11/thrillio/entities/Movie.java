@@ -1,5 +1,9 @@
 package net.ddns.sabi11.thrillio.entities;
 
+import java.util.Arrays;
+
+import net.ddns.sabi11.thrillio.constants.MovieGenre;
+
 public class Movie extends Bookmark {
 
 	//Attributes
@@ -40,5 +44,21 @@ public class Movie extends Bookmark {
 	public void setImdbRating(double imdbRating) {
 		this.imdbRating = imdbRating;
 	}
+	
+	@Override
+	public String toString() {
+		return "Movie [releaseYear=" + releaseYear + ", cast=" + Arrays.toString(cast) + ", directors="
+				+ Arrays.toString(directors) + ", genre=" + genre + ", imdbRating=" + imdbRating + "]";
+	}
+	@Override
+	public boolean isKidsFriendlyEligible() {
+		
+		if(genre.equalsIgnoreCase(MovieGenre.HORROR) || genre.equalsIgnoreCase(MovieGenre.THRILLERS)) {
+			
+			return false;
+		}
+		return true;
+	}
+	
 	
 }

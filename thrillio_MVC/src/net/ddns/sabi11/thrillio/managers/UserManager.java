@@ -1,11 +1,14 @@
 package net.ddns.sabi11.thrillio.managers;
 
+import net.ddns.sabi11.thrillio.dao.UserDao;
 import net.ddns.sabi11.thrillio.entities.User;
 
 public class UserManager {
 
 	//Create a single instance of this class
 	private static UserManager instance = new UserManager();
+	private static UserDao dao = new UserDao();
+	
 
 	// Singleton Pattern - only one object can be created
 	private UserManager() {
@@ -38,6 +41,12 @@ public class UserManager {
 		user.setUsertype(usertype);
 		
 		return user;
+	}
+	
+	//Calling the getUsers 
+	public User[] getUsers() {
+		
+		return dao.getUsers();
 	}
 
 }

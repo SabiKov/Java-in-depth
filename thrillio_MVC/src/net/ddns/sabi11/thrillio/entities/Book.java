@@ -1,5 +1,9 @@
 package net.ddns.sabi11.thrillio.entities;
 
+import java.util.Arrays;
+
+import net.ddns.sabi11.thrillio.constants.BookGenre;
+
 public class Book extends Bookmark {
 
 	private int publicationYear;
@@ -38,5 +42,18 @@ public class Book extends Bookmark {
 		this.amazonRating = amazonRating;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Book [publicationYear=" + publicationYear + ", publisher=" + publisher + ", author="
+				+ Arrays.toString(author) + ", genre=" + genre + ", amazonRating=" + amazonRating + "]";
+	}
+	@Override
+	public boolean isKidsFriendlyEligible() {
+		
+		if(genre.equalsIgnoreCase(BookGenre.PHILOSOPHY) || genre.equalsIgnoreCase(BookGenre.SELF_HELP)) {
+			return false;
+		}
+		
+		return true;
+	}
 }
