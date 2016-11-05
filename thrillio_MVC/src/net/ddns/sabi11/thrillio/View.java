@@ -56,10 +56,8 @@ public class View {
 						}
 					}
 				}
-			}
-			
+			}		
 		}
-
 	}
 
 	// TODO: Below methods simulate user input. After IO, we take input via console
