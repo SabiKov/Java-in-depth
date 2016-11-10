@@ -19,20 +19,22 @@ interface Superinterface {
 }
 
 class ObjectReference {
+	//constructor
 	ObjectReference() {
 	  System.out.println("ObjectReference: constructor");
 	}
 }
 
 class Superclass {
-	// static initialize block
+	// instance static initializer block
 	static {
 	    System.out.println("Superclass: static initializer");
 	}
-    //initialize block
+    //initializer block
     {
 	    System.out.println("Superclass: instance initializer");
 	}
+    
     //Constructor
     Superclass () {
     	System.out.println("Superclass: constructor");
@@ -47,10 +49,12 @@ class Subclass extends Superclass implements Superinterface {
 	//public static int STATIC_FINAL4 = new ClassInitializationDemo().getInt();
 	
 	ObjectReference objectReference = new ObjectReference();
+	
 	static {
 		System.out.println("Subclass: static initializer");
 		//staticFinal = 47;
 	}		
+	
 	Subclass () {
 		System.out.println("Subclass: constructor");	    
 	}	
@@ -61,23 +65,27 @@ class Subclass extends Superclass implements Superinterface {
 }
 
 public class ClassInitializationDemo {
+	//Instance initializer block
 	{
 		System.out.println("\nClassInitializationDemo: instance initializer");	
 	}
+	//Instance static initializer block
 	static {
-		System.out.println("\nClassInitializationDemo: static initializer (Initialization Stage)");
+		System.out.println("\nClassInitializationDemo: static initializer (Initialization Stage) line:74");
 	}
+	
 	static int getInt() { 
 		System.out.println("ClassInitializationDemo:getInt()");
 		return 3; 
 	}
+	
 	static int getInt5() { 
 		System.out.println("ClassInitializationDemo:getInt5()");
 		return 5; 
 	}
 	public static void main(String[] args) throws Exception { 		
-		System.out.println("\nJVM invoked the main method ... ");
-	    System.out.println("Subclass.STATIC_FINAL: " + Subclass.STATIC_FINAL);
+		System.out.println("\nJVM invoked the main method ... line: 87");
+	    System.out.println("Subclass.STATIC_FINAL: " + Subclass.STATIC_FINAL + " line:88");
 	    //System.out.println("Subclass.stringLiteral: " + Subclass.stringLiteral);
 	    System.out.println("Invoking Subclass.STATIC_FINAL2  ... ");
 		System.out.println("Subclass.STATIC_FINAL2: " + Subclass.STATIC_FINAL2);		

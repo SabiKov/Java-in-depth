@@ -74,7 +74,7 @@ public class BookmarkManager {
 	}
 
 	//Method creates a new weblink object by passing all parameters to the setter
-	public WebLink creatWebLink(
+	public WebLink createWebLink(
 			long id
 			, String title
 			, String url
