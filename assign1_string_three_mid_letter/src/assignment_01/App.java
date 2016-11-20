@@ -17,12 +17,12 @@ public class App {
 	
 	public static String middleThree(String str) {
 		int startAt = str.length() / 2 - 1;
-		int endAt = str.length() / 2 + 2;
+		int endAt = startAt + 3;
 		
 		//Ternary operator 
-		//String result = (str.length() > 3) ? str.substring(startAt, endAt) : str ;
+		//String result = (str.length() > 3) ? str.substring(startAt, endAt) : str;
 
-		return (str.length() > 3) ? str.substring(startAt, endAt) : str ;
+		return (str.length() >= 3) ? str.substring(startAt, endAt) : str ;
 	}
 	
 	
